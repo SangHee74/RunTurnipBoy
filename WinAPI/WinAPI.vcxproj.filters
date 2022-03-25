@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="GameNode.cpp">
+      <Filter>API\GameNode</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>API\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>API\Stdafx</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>API\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>API\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="FontManager.cpp">
+      <Filter>API\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="TempSoundManager.cpp">
+      <Filter>API\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>API\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Turnip.cpp">
+      <Filter>API\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="STATE.cpp">
+      <Filter>API\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="00_TitleScean.cpp">
+      <Filter>API\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="01_FirstScene.cpp">
+      <Filter>API\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="04_CompleteScean.cpp">
+      <Filter>API\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="02_SecondScene.cpp">
+      <Filter>API\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="03_ThirdScene.cpp">
+      <Filter>API\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="TempSoundTest.cpp">
+      <Filter>API\Utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameNode.h">
+      <Filter>API\GameNode</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>API\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>API\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>API\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>API\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>API\Stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>API\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>API\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="FontManager.h">
+      <Filter>API\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="TempSoundManager.h">
+      <Filter>API\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>API\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Turnip.h">
+      <Filter>API\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="STATE.h">
+      <Filter>API\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="00_TitleScean.h">
+      <Filter>API\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="01_FirstScene.h">
+      <Filter>API\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="04_CompleteScean.h">
+      <Filter>API\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="02_SecondScene.h">
+      <Filter>API\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="03_ThirdScene.h">
+      <Filter>API\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="TempSoundTest.h">
+      <Filter>API\Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="API">
+      <UniqueIdentifier>{c4cbdbdf-a3f5-443c-a292-314b607bc0e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\GameNode">
+      <UniqueIdentifier>{67442a1c-806f-41ef-813c-0de14b734860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\Utility">
+      <UniqueIdentifier>{41cc903a-8127-4ab3-aefa-95f747b36e7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\DesignPattern">
+      <UniqueIdentifier>{ddfcb838-f3d6-435b-bb55-d794a3fddc43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\Manager">
+      <UniqueIdentifier>{fd7088a5-c60e-496b-8bb8-16893861a2aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame">
+      <UniqueIdentifier>{3659e94e-c15f-4f2a-a005-dd8f48d76e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\Stdafx">
+      <UniqueIdentifier>{86133b6d-3090-4dfd-9207-7bd41a85c82f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\Image">
+      <UniqueIdentifier>{8d922d20-6355-46b1-8bdb-4e7951c55ed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\Unit">
+      <UniqueIdentifier>{e41ec2b4-efce-4d15-b917-39c0635f522b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\Scene">
+      <UniqueIdentifier>{8ce0dbaa-d396-4419-97f6-e3afe2cb33ac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\MatricFunction.txt">
+      <Filter>API\Utility</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
