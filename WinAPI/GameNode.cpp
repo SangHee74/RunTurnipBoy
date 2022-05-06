@@ -15,7 +15,6 @@ HRESULT GameNode::init(bool managerInit)
 
 	if (managerInit)
 	{	
-		//타이머 초기화
 		SetTimer(_hWnd, 1, 10, NULL);
 		
 		KEYMANAGER->init();

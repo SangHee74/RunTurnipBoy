@@ -1,6 +1,6 @@
 #pragma once
 //===========================================================
-// # commomMacroFunction # (필요한 함수는 직접 만들어 추가하자)
+// # commomMacroFunction #
 //===========================================================
 
 inline POINT PointMake(int x, int y)
@@ -32,7 +32,7 @@ inline void RectangleMake(HDC hdc, int x, int y, int width, int height)
 	Rectangle(hdc, x, y, x + width, y + height);
 }
 
-inline void rcMake(HDC hdc, RECT &rc) // 0126add
+inline void rcMake(HDC hdc, RECT &rc) 
 {
 	Rectangle(hdc, rc.left,rc.top,rc.right,rc.bottom);
 }

@@ -128,7 +128,6 @@ bool ImageManager::deleteImage(string strKey)
 bool ImageManager::deleteAll()
 {
 	auto iter = _mImageList.begin();
-	// auto 대신 mapImageIter 가능
 	for (; iter != _mImageList.end();)
 	{
 		if (iter->second != NULL)
@@ -147,7 +146,6 @@ bool ImageManager::deleteAll()
 	return true;
 }
 
-//이미지를 찾아서 렌더
 void ImageManager::render(string strKey, HDC hdc)
 {
 	Image* img = findImage(strKey);

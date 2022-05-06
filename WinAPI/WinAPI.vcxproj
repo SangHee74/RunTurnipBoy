@@ -200,9 +200,6 @@
     <ClInclude Include="03_ThirdScene.h" />
     <ClInclude Include="Turnip.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\MatricFunction.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

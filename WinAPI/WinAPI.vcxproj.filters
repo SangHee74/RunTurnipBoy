@@ -150,9 +150,4 @@
       <UniqueIdentifier>{8ce0dbaa-d396-4419-97f6-e3afe2cb33ac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\MatricFunction.txt">
-      <Filter>API\Utility</Filter>
-    </Text>
-  </ItemGroup>
 </Project>

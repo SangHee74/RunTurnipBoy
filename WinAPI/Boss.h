@@ -21,8 +21,6 @@ public:
 	Boss() {}
 	virtual ~Boss() {}
 
-	//stateClass* _state;
-
 	HRESULT init(void);
 	void release(void);
 	void update(void);
@@ -34,8 +32,6 @@ public:
 	void setRcMoveRight(int x) { rc.left += x; rc.right += x; }
 	void setRcMoveUp(int y) { rc.top -= y; rc.bottom -= y; }
 
-	//RECT getHP() { return HP; }
-	//void setHP(int x, int y, int w, int h) { HP = { x, y, x + w, y + h }; }
 
 	float getPosX() { return posX; }
 	void setPosX(int value) { posX = value; }

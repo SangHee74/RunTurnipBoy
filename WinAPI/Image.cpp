@@ -29,7 +29,6 @@ HRESULT Image::init(int width, int height)
 	_imageInfo->width = width;
 	_imageInfo->height = height;
 
-	// 파일 이름
 	_fileName = NULL;
 	_isTrans = FALSE;
 	_transColor = RGB(0, 0, 0);
@@ -81,7 +80,7 @@ HRESULT Image::init(const char* fileName, int width, int height, BOOL isTrans, C
 	HDC hdc = GetDC(_hWnd);
 
 	_imageInfo = new IMAGE_INFO;
-	_imageInfo->loadType = LOAD_FILE; // 파일로드 
+	_imageInfo->loadType = LOAD_FILE; 
 	_imageInfo->resID = 0; 
 	_imageInfo->hMemDC = CreateCompatibleDC(hdc);
 	_imageInfo->hBit = (HBITMAP)LoadImage(_hInstance, fileName,IMAGE_BITMAP,
@@ -92,7 +91,7 @@ HRESULT Image::init(const char* fileName, int width, int height, BOOL isTrans, C
 
 
 	int len = strlen(fileName);
-	_fileName = new CHAR[len + 1]; // 공백입력 방지
+	_fileName = new CHAR[len + 1]; 
 	strcpy_s(_fileName, len + 1, fileName);
 
 	_isTrans = isTrans;
@@ -142,7 +141,6 @@ HRESULT Image::init(const char * fileName, float x, float y, int width, int heig
 		return E_FAIL;
 	}
 
-	// DC해제
 	ReleaseDC(_hWnd, hdc);
 	return S_OK;
 	
@@ -233,18 +231,16 @@ HRESULT Image::init(const char * fileName, float x, float y, int width, int heig
 	return S_OK;
 }
 
-// 알파블렌드 초기화
 HRESULT Image::initForAlphaBlend(void)
 {
 
 	HDC hdc = GetDC(_hWnd);
 
-	_blendFunc.BlendFlags = 0; // 혼합비율 사용안함
+	_blendFunc.BlendFlags = 0; 
 	_blendFunc.AlphaFormat = 0; 
 	_blendFunc.BlendOp = AC_SRC_OVER; 
 	
 
-	// 이미지 정보 새로 생성 후 초기화
 	_blendImage = new IMAGE_INFO;
 	_blendImage->loadType = LOAD_FILE;  
 	_blendImage->resID = 0; 
@@ -291,7 +287,6 @@ void Image::release(void)
 	}
 }
 
-// 0.0 렌더
 void Image::render(HDC hdc)
 {
 	if (_isTrans)
@@ -303,12 +298,10 @@ void Image::render(HDC hdc)
 			0, 0,					
 			_imageInfo->width,		
 			_imageInfo->height,
-		//--------------------------
 			_imageInfo->hMemDC,		
 			0,0,					
 			_imageInfo->width,		
 			_imageInfo->height,
-		//--------------------------
 			_transColor				
 		);
 	}
@@ -320,7 +313,6 @@ void Image::render(HDC hdc)
 
 }
 
-// x.y 렌더
 void Image::render(HDC hdc, int destX, int destY)
 {
 	if (_isTrans) 
@@ -331,12 +323,10 @@ void Image::render(HDC hdc, int destX, int destY)
 			destX, destY,			
 			_imageInfo->width,		
 			_imageInfo->height,
-		//--------------------------
 			_imageInfo->hMemDC,		
 			0, 0,					
 			_imageInfo->width,		
 			_imageInfo->height,
-		//--------------------------
 			_transColor				
 		);
 	}
@@ -347,7 +337,6 @@ void Image::render(HDC hdc, int destX, int destY)
 	}
 }
 
-//클리핑 렌더
 void Image::render(HDC hdc, int destX, int destY, int sourX, int sourY, int sourWidth, int sourHeight)
 {
 	if (_isTrans) 
@@ -358,12 +347,10 @@ void Image::render(HDC hdc, int destX, int destY, int sourX, int sourY, int sour
 			destX, destY,			
 			sourWidth,				
 			sourHeight,
-			//----------------------
 			_imageInfo->hMemDC,		
 			sourX, sourY,			
 			sourWidth,				
 			sourHeight,
-			//----------------------
 			_transColor				
 		);
 	}
@@ -376,7 +363,6 @@ void Image::render(HDC hdc, int destX, int destY, int sourX, int sourY, int sour
 
 }
 
-// 알파렌더(배경)
 void Image::alphaRender(HDC hdc, BYTE alpha)
 {
 	if (!_blendImage) initForAlphaBlend();
@@ -399,12 +385,10 @@ void Image::alphaRender(HDC hdc, BYTE alpha)
 			0, 0,
 			_imageInfo->width,
 			_imageInfo->height,
-			//------------------
 			_imageInfo->hMemDC,
 			0, 0,
 			_imageInfo->width,
 			_imageInfo->height,
-			//------------------
 			_transColor
 		);
 
@@ -438,7 +422,6 @@ void Image::alphaRender(HDC hdc, BYTE alpha)
 	}
 }
 
-// 알파렌더(플레이어)
 void Image::alphaRender(HDC hdc, int destX, int destY, BYTE alpha)
 {
 	if (!_blendImage) initForAlphaBlend();
@@ -463,12 +446,10 @@ void Image::alphaRender(HDC hdc, int destX, int destY, BYTE alpha)
 			destX, destY,
 			_imageInfo->width,
 			_imageInfo->height,
-			//------------------
 			_imageInfo->hMemDC,
 			0, 0,
 			_imageInfo->width,
 			_imageInfo->height,
-			//------------------
 			_transColor
 		);
 
@@ -515,13 +496,11 @@ void Image::frameRender(HDC hdc, int destX, int destY)
 			destX, destY,				
 			_imageInfo->frameWidth,		
 			_imageInfo->frameHeight,
-			//--------------------------
 			_imageInfo->hMemDC,			
-			_imageInfo->currentFrameX * _imageInfo->frameWidth,			// 복사 시작 지점 : X, Y
+			_imageInfo->currentFrameX * _imageInfo->frameWidth,			
 			_imageInfo->currentFrameY * _imageInfo->frameHeight,
 			_imageInfo->frameWidth,		
 			_imageInfo->frameHeight,
-			//--------------------------
 			_transColor					
 		);
 	}
@@ -560,13 +539,11 @@ void Image::frameRender(HDC hdc, int destX, int destY, int currentFrameX, int cu
 			destX, destY,			
 			_imageInfo->frameWidth,	
 			_imageInfo->frameHeight,
-			//----------------------
 			_imageInfo->hMemDC,		
-			_imageInfo->currentFrameX * _imageInfo->frameWidth,			// 복사 시작 지점 : X, Y
+			_imageInfo->currentFrameX * _imageInfo->frameWidth,			
 			_imageInfo->currentFrameY * _imageInfo->frameHeight,
 			_imageInfo->frameWidth,								
 			_imageInfo->frameHeight,
-			//----------------------
 			_transColor				
 		);
 	}
@@ -584,7 +561,6 @@ void Image::frameRender(HDC hdc, int destX, int destY, int currentFrameX, int cu
 
 void Image::loopRender(HDC hdc, const LPRECT dramArea, int offsetX, int offsetY)
 {
-	// 음수 보정
 	if (offsetX < 0)offsetX = _imageInfo->width + (offsetX % _imageInfo->width);
 	if (offsetY < 0)offsetY = _imageInfo->height + (offsetY % _imageInfo->height);
 
@@ -594,16 +570,13 @@ void Image::loopRender(HDC hdc, const LPRECT dramArea, int offsetX, int offsetY)
 
 	RECT rcDest;
 
-	// 그려야 할 전체 영역
 	int dramAreaX = dramArea->left;
 	int dramAreaY = dramArea->top;
 	int dramAreaW = dramArea->right - dramArea->left;
 	int dramAreaH = dramArea->bottom - dramArea->top;
 
-	// 세로 루프
 	for (int y = 0; y < dramAreaH; y += sourHeight)
 	{
-		// 높이 계산
 		rcSour.top = (y + offsetY) % _imageInfo->height;
 		rcSour.bottom = _imageInfo->height;
 		sourHeight = rcSour.bottom - rcSour.top;
@@ -614,12 +587,9 @@ void Image::loopRender(HDC hdc, const LPRECT dramArea, int offsetX, int offsetY)
 			sourHeight = rcSour.bottom - rcSour.top;
 		}
 
-		// 그려지는 영역
 		rcDest.top = y + dramAreaY;
 		rcDest.bottom = rcDest.top + sourHeight;
 
-
-		// 가로 루프
 		for (int x = 0; x < dramAreaW; x += sourWidth)
 		{
 			rcSour.left = (x + offsetX) % _imageInfo->width;
@@ -638,9 +608,9 @@ void Image::loopRender(HDC hdc, const LPRECT dramArea, int offsetX, int offsetY)
 			render(hdc, rcDest.left, rcDest.top, rcSour.left, rcSour.top,
 				sourWidth, sourHeight);
 
-		}//end of second
+		}
 		
-	}//end of for
+	}
 
 }
 

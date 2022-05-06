@@ -13,7 +13,6 @@ public:
 	void dramText(HDC hdc, int destX, int destY, char* fontName, int fontSize, int fontWidth,
 		char* printString, int length, COLORREF color);
 
-	// LPCWSTR : W -> multy char -> Unicode;
 	void dramText(HDC hdc, int destX, int destY, char* fontName, int fontSize, int fontWidth,
 		LPCWSTR printString, int length, COLORREF color);
 

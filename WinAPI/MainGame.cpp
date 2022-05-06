@@ -103,8 +103,6 @@ void MainGame::update(void)
 void MainGame::render(void)
 {
 
-	// 검은색 빈 비트맵
-	// PatBle() : 사각형 영역을 브러쉬로 채우는 함수 
 	PatBlt(getMemDC(), 0, 0, WINSIZE_X, WINSIZE_Y, BLACKNESS);
 	//==========================================================
 
